@@ -47,7 +47,7 @@ for x in glob.glob("platform/*"):
 module_list=methods.detect_modules()
 
 
-print "Detected Platforms: "+str(platform_list)
+print("Detected Platforms: "+str(platform_list))
 print("Detected Modules: "+str(module_list))
 
 methods.save_active_platforms(active_platforms,active_platform_ids)
@@ -57,8 +57,8 @@ custom_tools=['default']
 if (os.name=="posix"):
 	pass
 elif (os.name=="nt"):
-    if (os.getenv("VSINSTALLDIR")==None):
-	custom_tools=['mingw']
+	if (os.getenv("VSINSTALLDIR")==None):
+		custom_tools=['mingw']
 
 env_base=Environment(tools=custom_tools,ENV = {'PATH' : os.environ['PATH']});
 #env_base=Environment(tools=custom_tools);
@@ -87,7 +87,7 @@ if profile:
 	elif os.path.isfile(profile+".py"):
 		customs.append(profile+".py")
 
-opts=Options(customs, ARGUMENTS)
+opts=Variables(customs, ARGUMENTS)
 opts.Add('target', 'Compile Target (debug/profile/release).', "debug")
 opts.Add('platform','Platform: '+str(platform_list)+'(sfml).',"")
 opts.Add('python','Build Python Support: (yes/no)','no')

@@ -1693,7 +1693,7 @@ Node::Node() {
 	data.inside_scene=false;
 
 	data.owner=NULL;
-	data.OW=false;
+	data.OW=NULL;
 	data.input=false;
 	data.unhandled_input=false;
 	data.pause_mode=PAUSE_MODE_INHERIT;

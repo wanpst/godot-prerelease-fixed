@@ -20,7 +20,7 @@ def add_source_files(self, sources, filetype, lib_env = None, shared = False):
 def build_shader_header( target, source, env ): 
 
 	for x in source:
-		print x
+		print(x)
 		
 		name = str(x)
 		name = name[ name.rfind("/")+1: ]
@@ -1122,7 +1122,7 @@ def update_version():
 	rev=version.revision
 	rev=rev[5:-1].strip()
 
-	f=open("core/version.h","wb")
+	f=open("core/version.h","r+")
 	f.write("#define VERSION_SHORT_NAME "+str(version.short_name)+"\n")
 	f.write("#define VERSION_NAME "+str(version.name)+"\n")
 	f.write("#define VERSION_MAJOR "+str(version.major)+"\n")
@@ -1248,7 +1248,7 @@ void unregister_module_types() {
 
 """
 
-	f=open("modules/register_module_types.cpp","wb")
+	f=open("modules/register_module_types.cpp","r+")
 	f.write(modules_cpp)
 
 	return module_list
@@ -1269,9 +1269,9 @@ def win32_spawn(sh, escape, cmd, args, env):
 	data, err = proc.communicate()
 	rv = proc.wait()
 	if rv:
-		print "====="
-		print err
-		print "====="
+		print("=====")
+		print(err)
+		print("=====")
 	return rv
 
 """
@@ -1344,6 +1344,6 @@ def save_active_platforms(apnames,ap):
 		str+="};\n"
 		
 		wf = x+"/logo.h"
-		logow = open(wf,"wb")
+		logow = open(wf,"r+")
 		logow.write(str)
 

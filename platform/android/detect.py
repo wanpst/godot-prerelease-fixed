@@ -10,10 +10,9 @@ def get_name():
 	return "Android"
 
 def can_build():
-
-        import os
-        if (not os.environ.has_key("ANDROID_NDK_ROOT")):
-        	return False
+	import os
+	if not "ANDROID_NDK_ROOT" in os.environ:
+		return False
 	return True
 
 def get_opts():

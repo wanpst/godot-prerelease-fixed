@@ -145,7 +145,7 @@ class NewProjectDialog : public ConfirmationDialog {
 
 			fdialog->set_mode(FileDialog::MODE_OPEN_FILE);
 			fdialog->clear_filters();
-			fdialog->add_filter("engine.cfg ; "_MKSTR(VERSION_NAME)" Project");
+			fdialog->add_filter("engine.cfg ; " _MKSTR(VERSION_NAME) " Project");
 		} else {
 			fdialog->set_mode(FileDialog::MODE_OPEN_DIR);
 		}

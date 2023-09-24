@@ -9,10 +9,9 @@ def get_name():
 	return "JavaScript"
 
 def can_build():
-
-        import os
-        if (not os.environ.has_key("EMSCRIPTEN_ROOT")):
-        	return False
+	import os
+	if not "EMSCRIPTEN_ROOT" in os.environ:
+		return False
 	return True
 
 def get_opts():

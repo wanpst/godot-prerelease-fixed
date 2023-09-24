@@ -91,8 +91,7 @@ def configure(env):
 			env.Append(LINKFLAGS=['/SUBSYSTEM:CONSOLE'])
 
 		elif (env["target"]=="debug"):
-
-                        env.Append(CCFLAGS=['/Zi','/DDEBUG_ENABLED','/DD3D_DEBUG_INFO','/O1'])
+			env.Append(CCFLAGS=['/Zi','/DDEBUG_ENABLED','/DD3D_DEBUG_INFO','/O1'])
 			env.Append(LINKFLAGS=['/SUBSYSTEM:CONSOLE'])
 
 		elif (env["target"]=="profile"):
@@ -117,15 +116,15 @@ def configure(env):
 		env.Append(LINKFLAGS=['/DEBUG'])
 
 		env.Append(LIBPATH=[os.getenv("WindowsSdkDir")+"/Lib"])
-                if (os.getenv("DXSDK_DIR")):
-                        DIRECTX_PATH=os.getenv("DXSDK_DIR")
-                else:
-                        DIRECTX_PATH="C:/Program Files/Microsoft DirectX SDK (March 2009)"
+		if (os.getenv("DXSDK_DIR")):
+				DIRECTX_PATH=os.getenv("DXSDK_DIR")
+		else:
+				DIRECTX_PATH="C:/Program Files/Microsoft DirectX SDK (March 2009)"
 
-                if (os.getenv("VCINSTALLDIR")):
-                        VC_PATH=os.getenv("VCINSTALLDIR")
-                else:
-                        VC_PATH=""
+		if (os.getenv("VCINSTALLDIR")):
+				VC_PATH=os.getenv("VCINSTALLDIR")
+		else:
+				VC_PATH=""
 
 		env.Append(CCFLAGS=["/I"+VC_PATH+"/Include"])
 		env.Append(LIBPATH=[VC_PATH+"/Lib"])
