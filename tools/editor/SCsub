@@ -9,7 +9,7 @@ if (env["tools"]=="yes"):
 		reg_exporters+='\tregister_'+e+'_exporter();\n'
 		reg_exporters_inc+='#include "platform/'+e+'/export/export.h"\n'
 	reg_exporters+='}\n'
-	f = open("register_exporters.cpp","r+")
+	f = open("register_exporters.cpp","w+")
 	f.write(reg_exporters_inc)
 	f.write(reg_exporters)
 
